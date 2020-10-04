@@ -7,8 +7,8 @@ function Player(x, y) {
     this.yspeed = 0;
     this.friction = 0.6; //determines how quick or slow player slows on keyup
     this.maxSpeed = 10;
-    this.width = 50;
-    this.height = 100;
+    this.width = 25;
+    this.height = 25;
     this.active = true;
 
     console.log("player this", this);
@@ -23,21 +23,30 @@ function Player(x, y) {
                 this.xspeed *= this.friction;
             } else if (rightKey) {
                 //move right
-                this.xspeed++;
+                this.xspeed+=3;
             } else if (leftKey) {
                 //move left
-                this.xspeed--;
+                this.xspeed-=3;
             }
 
-            //vertical movement
-            if (upKey) {
-                //check if on ground
-
-                this.yspeed -= 10;
-            }
+            //vertical movement with gravity
+            // if (upKey) {
+            //     this.yspeed -= 9;
+            // }
 
             //gravity
-            this.yspeed += 5;
+            //this.yspeed += 5;
+
+            //vartical movement
+            if (!upKey && !downKey || upKey && downKey) {
+                this.yspeed *= this.friction
+            } else if (upKey) {
+                this.yspeed-=3;
+            } else if (downKey) {
+                this.yspeed+=3;
+            }
+
+
 
             //speed corrections
             if (this.xspeed > this.maxSpeed) {
@@ -118,7 +127,10 @@ function Player(x, y) {
     }
 
     this.draw = function() {
-        context.fillStyle = "purple";
+
+        // var img = document.getElementById('mickeyMouse');
+        // context.fillStyle = context.createPattern(img, 'repeat');
+        context.fillStyle = 'purple';
         context.fillRect(this.x, this.y, this.width, this.height);
     }
 }

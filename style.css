@@ -1,7 +1,7 @@
 body {
     text-align: center;
     background-color: #c59fc9;
-    /* overflow-y: hidden; */
+    overflow-y: hidden;
 }
 
 canvas {

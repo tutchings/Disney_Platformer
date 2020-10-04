@@ -19,15 +19,25 @@ window.onload = function() {
 
     //create player
     player = new Player(100, 400); 
+
+    //build borders of canvas
+    mapTextures.push(new Border(0, 0, 1280, .01, 1));
+    mapTextures.push(new Border(0, 0, .01, 720, 1));
+    mapTextures.push(new Border(1280 - .01, 0, .01, 720, 1));
+    mapTextures.push(new Border(0, 720 - .01, 1280, .01, 1));
     
+
     //build map
-    for (var i = 0; i < 6; i++) {
-        mapTextures.push(new Border(0 + 100 * i, 620, 100, 100, 1));
-    }
-    mapTextures.push(new Border(0, 520, 100, 100, 2));
-    for (var i = 0; i < 3; i++) {
-        mapTextures.push(new Border(600, 420 + 100 * i, 100, 100, 2));
-    }
+    mapTextures.push(new Border(590, 600, 100, 150, 2));
+    // for (var i = 0; i < 15; i++) {
+    //     mapTextures.push(new Border(0 + 100 * i, 620, 100, 100, 3));
+    // }
+
+    // mapTextures.push(new Border(0, 520, 100, 100, 2));
+
+    // for (var i = 0; i < 3; i++) {
+    //     mapTextures.push(new Border(600, 420 + 100 * (i - 1), 100, 100, 2));
+    // }
 
     //create game loop
     //calls step function 30 times per second
