@@ -9,3 +9,7 @@ canvas {
     width: 80%;
     height: auto;
 }
+
+#mapGridPieces {
+    display: none;
+}

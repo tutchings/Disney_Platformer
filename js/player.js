@@ -7,8 +7,8 @@ function Player(x, y) {
     this.yspeed = 0;
     this.friction = 0.6; //determines how quick or slow player slows on keyup
     this.maxSpeed = 10;
-    this.width = 25;
-    this.height = 25;
+    this.width = 10;
+    this.height = 10;
     this.active = true;
 
     console.log("player this", this);

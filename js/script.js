@@ -18,26 +18,95 @@ var leftKey;
 window.onload = function() {
 
     //create player
-    player = new Player(100, 400); 
+    player = new Player(1, 600); 
 
-    //build borders of canvas
-    mapTextures.push(new Border(0, 0, 1280, .01, 1));
-    mapTextures.push(new Border(0, 0, .01, 720, 1));
-    mapTextures.push(new Border(1280 - .01, 0, .01, 720, 1));
-    mapTextures.push(new Border(0, 720 - .01, 1280, .01, 1));
-    
+    //build map, row 1
+    for (let i = 0; i < 26; i++){
+        mapTextures.push(new Border(0 + (i * 50), 0, 50, 50, i));
+    }
 
-    //build map
-    mapTextures.push(new Border(590, 600, 100, 150, 2));
-    // for (var i = 0; i < 15; i++) {
-    //     mapTextures.push(new Border(0 + 100 * i, 620, 100, 100, 3));
-    // }
+    //build map, row 2
+    for (let i = 0; i < 26; i++){
+        mapTextures.push(new Border(0 + (i * 50), 50, 50, 50, (i + 26)));
+    }
 
-    // mapTextures.push(new Border(0, 520, 100, 100, 2));
+    //build map, row 3
+    for (let i = 0; i < 26; i++){
+        mapTextures.push(new Border(0 + (i * 50), 100, 50, 50, (i + 52)));
+    }
 
-    // for (var i = 0; i < 3; i++) {
-    //     mapTextures.push(new Border(600, 420 + 100 * (i - 1), 100, 100, 2));
-    // }
+    //build map, row 4
+    for (let i = 0; i < 26; i++){
+        mapTextures.push(new Border(0 + (i * 50), 150, 50, 50, (i + 78)));
+    }
+
+    //build map, row 5
+    for (let i = 0; i < 26; i++){
+        mapTextures.push(new Border(0 + (i * 50), 200, 50, 50, (i + 104)));
+    }
+
+    //build map, row 6
+    for (let i = 0; i < 26; i++){
+        mapTextures.push(new Border(0 + (i * 50), 250, 50, 50, (i + 130)));
+    }
+
+    //build map, row 7
+    for (let i = 0; i < 26; i++){
+        mapTextures.push(new Border(0 + (i * 50), 300, 50, 50, (i + 156)));
+    }
+
+    //build map, row 8
+    for (let i = 0; i < 26; i++){
+        if (i !== 5){
+            mapTextures.push(new Border(0 + (i * 50), 350, 50, 50, (i + 182)));
+        }
+    }
+
+    //build map, row 9
+    for (let i = 0; i < 26; i++){
+        mapTextures.push(new Border(0 + (i * 50), 400, 50, 50, (i + 208)));
+    }
+
+    //build map, row 10
+    for (let i = 0; i < 26; i++){
+        mapTextures.push(new Border(0 + (i * 50), 450, 50, 50, (i + 234)));
+    }
+
+    //build map, row 11
+    for (let i = 0; i < 26; i++){
+        mapTextures.push(new Border(0 + (i * 50), 500, 50, 50, (i + 260)));
+    }
+
+    //build map, row 12
+    for (let i = 0; i < 26; i++){
+        if (i !== 0){
+            mapTextures.push(new Border(0 + (i * 50), 550, 50, 50, (i + 286)));
+        }
+        
+    }
+
+    //build map, row 13
+    for (let i = 0; i < 26; i++){
+        if (i !== 0 && i !== 1 && i !== 2){
+            mapTextures.push(new Border(0 + (i * 50), 600, 50, 50, (i + 312)));
+        }
+    }
+
+    //build map, row 14
+    for (let i = 0; i < 26; i++){
+        if (i !== 0 && i !== 2) {
+            mapTextures.push(new Border(0 + (i * 50), 650, 50, 50, (i + 338)));
+        }
+        
+    }
+
+    //build borders around outside of canvas
+    //ensures user cannot move off map
+    mapTextures.push(new Border(0, 550, .001, 50, 364));
+    mapTextures.push(new Border(0, 600, .001, 50, 364));
+    mapTextures.push(new Border(0, 650, .001, 50, 364));
+    mapTextures.push(new Border(0, 700, 50, .001, 364));
+
 
     //create game loop
     //calls step function 30 times per second
@@ -47,6 +116,8 @@ window.onload = function() {
 
 
 } //end onload function
+
+console.log('mapTextures: ', mapTextures);
 
 
 
@@ -64,8 +135,8 @@ function step() {
 function draw() {
 
     //clear canvas
-    context.fillStyle = "#a4def9";
-    context.fillRect(0,0,1280,720);
+    context.fillStyle = "red";
+    context.fillRect(0,0,1300,700);
 
     //draw player
     player.draw();
