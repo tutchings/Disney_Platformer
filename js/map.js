@@ -1101,7 +1101,19 @@ function Border (x, y, width, height, type) {
             img = document.getElementById('r14c26');
             context.fillStyle = context.createPattern(img, 'repeat');
         } else if (this.type === 364) {
-            context.fillStyle = "red";
+            img = document.getElementById('doleWhip');
+            context.fillStyle = context.createPattern(img, 'repeat');
+        } else if (this.type === 365) {
+            img = document.getElementById('mickeyEars');
+            context.fillStyle = context.createPattern(img, 'repeat');
+        } else if (this.type === 366) {
+            img = document.getElementById('mickeyIceCream');
+            context.fillStyle = context.createPattern(img, 'repeat');
+        } else if (this.type === 367) {
+            img = document.getElementById('orangeBird');
+            context.fillStyle = context.createPattern(img, 'repeat');
+        } else if (this.type === 368) {
+            context.fillStyle = "#e8d7d0";
         }
 
         context.fillRect(this.x, this.y, this.width, this.height);
