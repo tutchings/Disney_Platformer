@@ -7,8 +7,8 @@ function Player(x, y) {
     this.yspeed = 0;
     this.friction = 0.6; //determines how quick or slow player slows on keyup
     this.maxSpeed = 10;
-    this.width = 10;
-    this.height = 10;
+    this.width = 20;
+    this.height = 20;
     this.active = true;
     var score = 0;
 
@@ -153,12 +153,14 @@ function Player(x, y) {
                     score++;
                 }
 
+                
                 if (score === 8){
-                    var playAgain = confirm('You Win! You helped Mickey Mouse collect all of the treats and merchandise in Magic Kingdom. Do you want to play again?');
+                    var playAgain = confirm('You Win! You helped Mickey Mouse traverse Magic Kingdom and collect all of the treats and merchandise he needed for his party. Do you want to play again?');
                     if (playAgain) {
                         location.reload();
                     }
                 }
+
 
                 
             }
@@ -169,11 +171,12 @@ function Player(x, y) {
         }
     }
 
+
     this.draw = function() {
 
         // var img = document.getElementById('mickeyMouse');
         // context.fillStyle = context.createPattern(img, 'repeat');
-        context.fillStyle = 'purple';
+        context.fillStyle = 'purple'; 
         context.fillRect(this.x, this.y, this.width, this.height);
     }
 

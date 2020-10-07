@@ -14,7 +14,6 @@ var rightKey;
 var downKey;
 var leftKey;
 
-
 //run function when page loads
 window.onload = function() {
 

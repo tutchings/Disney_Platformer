@@ -13,3 +13,13 @@ canvas {
 #mapGridPieces {
     display: none;
 }
+
+#backBtn{
+    float: left;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.gameTitle{
+    font-size: 40px;
+}

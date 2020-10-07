@@ -1,426 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disney Platformer</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        body{
+          background-color:  #008dd5;
+        }
+        .treatsCards{
+            text-align: center;
+        }
+        .treatsImg{
+            margin-bottom: 10px;
+        }
+        #startBtn{
+            text-align: center;
+        }
+        #gameInfo{
+          margin-bottom: 25px;
+        }
+        .jumbotron{
+          text-align: center
+        }
+    </style>
+    <title>Disney Platformer Launch Page</title>
+  </head>
+  <body>
+    <div class="container">
 
-
-<body>
-
-    <h1>Disney Platformer</h1>
-
-
-
-    <canvas width=1300 height=700 id="platformer-canvas"></canvas>
-
-    <div id = 'mapGridPieces'>    
-        <!-- Row 1 -->
-        <img src="imgs/mapGrid/row1/r1c1.jpg" id="r1c1">
-        <img src="imgs/mapGrid/row1/r1c2.jpg" id="r1c2">
-        <img src="imgs/mapGrid/row1/r1c3.jpg" id="r1c3">
-        <img src="imgs/mapGrid/row1/r1c4.jpg" id="r1c4">
-        <img src="imgs/mapGrid/row1/r1c5.jpg" id="r1c5">
-        <img src="imgs/mapGrid/row1/r1c6.jpg" id="r1c6">
-        <img src="imgs/mapGrid/row1/r1c7.jpg" id="r1c7">
-        <img src="imgs/mapGrid/row1/r1c8.jpg" id="r1c8">
-        <img src="imgs/mapGrid/row1/r1c9.jpg" id="r1c9">
-        <img src="imgs/mapGrid/row1/r1c10.jpg" id="r1c10">
-        <img src="imgs/mapGrid/row1/r1c11.jpg" id="r1c11">
-        <img src="imgs/mapGrid/row1/r1c12.jpg" id="r1c12">
-        <img src="imgs/mapGrid/row1/r1c13.jpg" id="r1c13">
-        <img src="imgs/mapGrid/row1/r1c14.jpg" id="r1c14">
-        <img src="imgs/mapGrid/row1/r1c15.jpg" id="r1c15">
-        <img src="imgs/mapGrid/row1/r1c16.jpg" id="r1c16">
-        <img src="imgs/mapGrid/row1/r1c17.jpg" id="r1c17">
-        <img src="imgs/mapGrid/row1/r1c18.jpg" id="r1c18">
-        <img src="imgs/mapGrid/row1/r1c19.jpg" id="r1c19">
-        <img src="imgs/mapGrid/row1/r1c20.jpg" id="r1c20">
-        <img src="imgs/mapGrid/row1/r1c21.jpg" id="r1c21">
-        <img src="imgs/mapGrid/row1/r1c22.jpg" id="r1c22">
-        <img src="imgs/mapGrid/row1/r1c23.jpg" id="r1c23">
-        <img src="imgs/mapGrid/row1/r1c24.jpg" id="r1c24">
-        <img src="imgs/mapGrid/row1/r1c25.jpg" id="r1c25">
-        <img src="imgs/mapGrid/row1/r1c26.jpg" id="r1c26">
-
-        <!-- Row 2 -->
-        <img src="imgs/mapGrid/row2/r2c1.jpg" id="r2c1">
-        <img src="imgs/mapGrid/row2/r2c2.jpg" id="r2c2">
-        <img src="imgs/mapGrid/row2/r2c3.jpg" id="r2c3">
-        <img src="imgs/mapGrid/row2/r2c4.jpg" id="r2c4">
-        <img src="imgs/mapGrid/row2/r2c5.jpg" id="r2c5">
-        <img src="imgs/mapGrid/row2/r2c6.jpg" id="r2c6">
-        <img src="imgs/mapGrid/row2/r2c7.jpg" id="r2c7">
-        <img src="imgs/mapGrid/row2/r2c8.jpg" id="r2c8">
-        <img src="imgs/mapGrid/row2/r2c9.jpg" id="r2c9">
-        <img src="imgs/mapGrid/row2/r2c10.jpg" id="r2c10">
-        <img src="imgs/mapGrid/row2/r2c11.jpg" id="r2c11">
-        <img src="imgs/mapGrid/row2/r2c12.jpg" id="r2c12">
-        <img src="imgs/mapGrid/row2/r2c13.jpg" id="r2c13">
-        <img src="imgs/mapGrid/row2/r2c14.jpg" id="r2c14">
-        <img src="imgs/mapGrid/row2/r2c15.jpg" id="r2c15">
-        <img src="imgs/mapGrid/row2/r2c16.jpg" id="r2c16">
-        <img src="imgs/mapGrid/row2/r2c17.jpg" id="r2c17">
-        <img src="imgs/mapGrid/row2/r2c18.jpg" id="r2c18">
-        <img src="imgs/mapGrid/row2/r2c19.jpg" id="r2c19">
-        <img src="imgs/mapGrid/row2/r2c20.jpg" id="r2c20">
-        <img src="imgs/mapGrid/row2/r2c21.jpg" id="r2c21">
-        <img src="imgs/mapGrid/row2/r2c22.jpg" id="r2c22">
-        <img src="imgs/mapGrid/row2/r2c23.jpg" id="r2c23">
-        <img src="imgs/mapGrid/row2/r2c24.jpg" id="r2c24">
-        <img src="imgs/mapGrid/row2/r2c25.jpg" id="r2c25">
-        <img src="imgs/mapGrid/row2/r2c26.jpg" id="r2c26">
-
-        <!-- Row 3 -->
-        <img src="imgs/mapGrid/row3/r3c1.jpg" id="r3c1">
-        <img src="imgs/mapGrid/row3/r3c2.jpg" id="r3c2">
-        <img src="imgs/mapGrid/row3/r3c3.jpg" id="r3c3">
-        <img src="imgs/mapGrid/row3/r3c4.jpg" id="r3c4">
-        <img src="imgs/mapGrid/row3/r3c5.jpg" id="r3c5">
-        <img src="imgs/mapGrid/row3/r3c6.jpg" id="r3c6">
-        <img src="imgs/mapGrid/row3/r3c7.jpg" id="r3c7">
-        <img src="imgs/mapGrid/row3/r3c8.jpg" id="r3c8">
-        <img src="imgs/mapGrid/row3/r3c9.jpg" id="r3c9">
-        <img src="imgs/mapGrid/row3/r3c10.jpg" id="r3c10">
-        <img src="imgs/mapGrid/row3/r3c11.jpg" id="r3c11">
-        <img src="imgs/mapGrid/row3/r3c12.jpg" id="r3c12">
-        <img src="imgs/mapGrid/row3/r3c13.jpg" id="r3c13">
-        <img src="imgs/mapGrid/row3/r3c14.jpg" id="r3c14">
-        <img src="imgs/mapGrid/row3/r3c15.jpg" id="r3c15">
-        <img src="imgs/mapGrid/row3/r3c16.jpg" id="r3c16">
-        <img src="imgs/mapGrid/row3/r3c17.jpg" id="r3c17">
-        <img src="imgs/mapGrid/row3/r3c18.jpg" id="r3c18">
-        <img src="imgs/mapGrid/row3/r3c19.jpg" id="r3c19">
-        <img src="imgs/mapGrid/row3/r3c20.jpg" id="r3c20">
-        <img src="imgs/mapGrid/row3/r3c21.jpg" id="r3c21">
-        <img src="imgs/mapGrid/row3/r3c22.jpg" id="r3c22">
-        <img src="imgs/mapGrid/row3/r3c23.jpg" id="r3c23">
-        <img src="imgs/mapGrid/row3/r3c24.jpg" id="r3c24">
-        <img src="imgs/mapGrid/row3/r3c25.jpg" id="r3c25">
-        <img src="imgs/mapGrid/row3/r3c26.jpg" id="r3c26">
-
-        <!-- Row 4 -->
-        <img src="imgs/mapGrid/row4/r4c1.jpg" id="r4c1">
-        <img src="imgs/mapGrid/row4/r4c2.jpg" id="r4c2">
-        <img src="imgs/mapGrid/row4/r4c3.jpg" id="r4c3">
-        <img src="imgs/mapGrid/row4/r4c4.jpg" id="r4c4">
-        <img src="imgs/mapGrid/row4/r4c5.jpg" id="r4c5">
-        <img src="imgs/mapGrid/row4/r4c6.jpg" id="r4c6">
-        <img src="imgs/mapGrid/row4/r4c7.jpg" id="r4c7">
-        <img src="imgs/mapGrid/row4/r4c8.jpg" id="r4c8">
-        <img src="imgs/mapGrid/row4/r4c9.jpg" id="r4c9">
-        <img src="imgs/mapGrid/row4/r4c10.jpg" id="r4c10">
-        <img src="imgs/mapGrid/row4/r4c11.jpg" id="r4c11">
-        <img src="imgs/mapGrid/row4/r4c12.jpg" id="r4c12">
-        <img src="imgs/mapGrid/row4/r4c13.jpg" id="r4c13">
-        <img src="imgs/mapGrid/row4/r4c14.jpg" id="r4c14">
-        <img src="imgs/mapGrid/row4/r4c15.jpg" id="r4c15">
-        <img src="imgs/mapGrid/row4/r4c16.jpg" id="r4c16">
-        <img src="imgs/mapGrid/row4/r4c17.jpg" id="r4c17">
-        <img src="imgs/mapGrid/row4/r4c18.jpg" id="r4c18">
-        <img src="imgs/mapGrid/row4/r4c19.jpg" id="r4c19">
-        <img src="imgs/mapGrid/row4/r4c20.jpg" id="r4c20">
-        <img src="imgs/mapGrid/row4/r4c21.jpg" id="r4c21">
-        <img src="imgs/mapGrid/row4/r4c22.jpg" id="r4c22">
-        <img src="imgs/mapGrid/row4/r4c23.jpg" id="r4c23">
-        <img src="imgs/mapGrid/row4/r4c24.jpg" id="r4c24">
-        <img src="imgs/mapGrid/row4/r4c25.jpg" id="r4c25">
-        <img src="imgs/mapGrid/row4/r4c26.jpg" id="r4c26">
-
-        <!-- Row 5 -->
-        <img src="imgs/mapGrid/row5/r5c1.jpg" id="r5c1">
-        <img src="imgs/mapGrid/row5/r5c2.jpg" id="r5c2">
-        <img src="imgs/mapGrid/row5/r5c3.jpg" id="r5c3">
-        <img src="imgs/mapGrid/row5/r5c4.jpg" id="r5c4">
-        <img src="imgs/mapGrid/row5/r5c5.jpg" id="r5c5">
-        <img src="imgs/mapGrid/row5/r5c6.jpg" id="r5c6">
-        <img src="imgs/mapGrid/row5/r5c7.jpg" id="r5c7">
-        <img src="imgs/mapGrid/row5/r5c8.jpg" id="r5c8">
-        <img src="imgs/mapGrid/row5/r5c9.jpg" id="r5c9">
-        <img src="imgs/mapGrid/row5/r5c10.jpg" id="r5c10">
-        <img src="imgs/mapGrid/row5/r5c11.jpg" id="r5c11">
-        <img src="imgs/mapGrid/row5/r5c12.jpg" id="r5c12">
-        <img src="imgs/mapGrid/row5/r5c13.jpg" id="r5c13">
-        <img src="imgs/mapGrid/row5/r5c14.jpg" id="r5c14">
-        <img src="imgs/mapGrid/row5/r5c15.jpg" id="r5c15">
-        <img src="imgs/mapGrid/row5/r5c16.jpg" id="r5c16">
-        <img src="imgs/mapGrid/row5/r5c17.jpg" id="r5c17">
-        <img src="imgs/mapGrid/row5/r5c18.jpg" id="r5c18">
-        <img src="imgs/mapGrid/row5/r5c19.jpg" id="r5c19">
-        <img src="imgs/mapGrid/row5/r5c20.jpg" id="r5c20">
-        <img src="imgs/mapGrid/row5/r5c21.jpg" id="r5c21">
-        <img src="imgs/mapGrid/row5/r5c22.jpg" id="r5c22">
-        <img src="imgs/mapGrid/row5/r5c23.jpg" id="r5c23">
-        <img src="imgs/mapGrid/row5/r5c24.jpg" id="r5c24">
-        <img src="imgs/mapGrid/row5/r5c25.jpg" id="r5c25">
-        <img src="imgs/mapGrid/row5/r5c26.jpg" id="r5c26">
-
-        <!-- Row 6 -->
-        <img src="imgs/mapGrid/row6/r6c1.jpg" id="r6c1">
-        <img src="imgs/mapGrid/row6/r6c2.jpg" id="r6c2">
-        <img src="imgs/mapGrid/row6/r6c3.jpg" id="r6c3">
-        <img src="imgs/mapGrid/row6/r6c4.jpg" id="r6c4">
-        <img src="imgs/mapGrid/row6/r6c5.jpg" id="r6c5">
-        <img src="imgs/mapGrid/row6/r6c6.jpg" id="r6c6">
-        <img src="imgs/mapGrid/row6/r6c7.jpg" id="r6c7">
-        <img src="imgs/mapGrid/row6/r6c8.jpg" id="r6c8">
-        <img src="imgs/mapGrid/row6/r6c9.jpg" id="r6c9">
-        <img src="imgs/mapGrid/row6/r6c10.jpg" id="r6c10">
-        <img src="imgs/mapGrid/row6/r6c11.jpg" id="r6c11">
-        <img src="imgs/mapGrid/row6/r6c12.jpg" id="r6c12">
-        <img src="imgs/mapGrid/row6/r6c13.jpg" id="r6c13">
-        <img src="imgs/mapGrid/row6/r6c14.jpg" id="r6c14">
-        <img src="imgs/mapGrid/row6/r6c15.jpg" id="r6c15">
-        <img src="imgs/mapGrid/row6/r6c16.jpg" id="r6c16">
-        <img src="imgs/mapGrid/row6/r6c17.jpg" id="r6c17">
-        <img src="imgs/mapGrid/row6/r6c18.jpg" id="r6c18">
-        <img src="imgs/mapGrid/row6/r6c19.jpg" id="r6c19">
-        <img src="imgs/mapGrid/row6/r6c20.jpg" id="r6c20">
-        <img src="imgs/mapGrid/row6/r6c21.jpg" id="r6c21">
-        <img src="imgs/mapGrid/row6/r6c22.jpg" id="r6c22">
-        <img src="imgs/mapGrid/row6/r6c23.jpg" id="r6c23">
-        <img src="imgs/mapGrid/row6/r6c24.jpg" id="r6c24">
-        <img src="imgs/mapGrid/row6/r6c25.jpg" id="r6c25">
-        <img src="imgs/mapGrid/row6/r6c26.jpg" id="r6c26">
-
-        <!-- Row 7 -->
-        <img src="imgs/mapGrid/row7/r7c1.jpg" id="r7c1">
-        <img src="imgs/mapGrid/row7/r7c2.jpg" id="r7c2">
-        <img src="imgs/mapGrid/row7/r7c3.jpg" id="r7c3">
-        <img src="imgs/mapGrid/row7/r7c4.jpg" id="r7c4">
-        <img src="imgs/mapGrid/row7/r7c5.jpg" id="r7c5">
-        <img src="imgs/mapGrid/row7/r7c6.jpg" id="r7c6">
-        <img src="imgs/mapGrid/row7/r7c7.jpg" id="r7c7">
-        <img src="imgs/mapGrid/row7/r7c8.jpg" id="r7c8">
-        <img src="imgs/mapGrid/row7/r7c9.jpg" id="r7c9">
-        <img src="imgs/mapGrid/row7/r7c10.jpg" id="r7c10">
-        <img src="imgs/mapGrid/row7/r7c11.jpg" id="r7c11">
-        <img src="imgs/mapGrid/row7/r7c12.jpg" id="r7c12">
-        <img src="imgs/mapGrid/row7/r7c13.jpg" id="r7c13">
-        <img src="imgs/mapGrid/row7/r7c14.jpg" id="r7c14">
-        <img src="imgs/mapGrid/row7/r7c15.jpg" id="r7c15">
-        <img src="imgs/mapGrid/row7/r7c16.jpg" id="r7c16">
-        <img src="imgs/mapGrid/row7/r7c17.jpg" id="r7c17">
-        <img src="imgs/mapGrid/row7/r7c18.jpg" id="r7c18">
-        <img src="imgs/mapGrid/row7/r7c19.jpg" id="r7c19">
-        <img src="imgs/mapGrid/row7/r7c20.jpg" id="r7c20">
-        <img src="imgs/mapGrid/row7/r7c21.jpg" id="r7c21">
-        <img src="imgs/mapGrid/row7/r7c22.jpg" id="r7c22">
-        <img src="imgs/mapGrid/row7/r7c23.jpg" id="r7c23">
-        <img src="imgs/mapGrid/row7/r7c24.jpg" id="r7c24">
-        <img src="imgs/mapGrid/row7/r7c25.jpg" id="r7c25">
-        <img src="imgs/mapGrid/row7/r7c26.jpg" id="r7c26">
-
-        <!-- Row 8 -->
-        <img src="imgs/mapGrid/row8/r8c1.jpg" id="r8c1">
-        <img src="imgs/mapGrid/row8/r8c2.jpg" id="r8c2">
-        <img src="imgs/mapGrid/row8/r8c3.jpg" id="r8c3">
-        <img src="imgs/mapGrid/row8/r8c4.jpg" id="r8c4">
-        <img src="imgs/mapGrid/row8/r8c5.jpg" id="r8c5">
-        <img src="imgs/mapGrid/row8/r8c6.jpg" id="r8c6">
-        <img src="imgs/mapGrid/row8/r8c7.jpg" id="r8c7">
-        <img src="imgs/mapGrid/row8/r8c8.jpg" id="r8c8">
-        <img src="imgs/mapGrid/row8/r8c9.jpg" id="r8c9">
-        <img src="imgs/mapGrid/row8/r8c10.jpg" id="r8c10">
-        <img src="imgs/mapGrid/row8/r8c11.jpg" id="r8c11">
-        <img src="imgs/mapGrid/row8/r8c12.jpg" id="r8c12">
-        <img src="imgs/mapGrid/row8/r8c13.jpg" id="r8c13">
-        <img src="imgs/mapGrid/row8/r8c14.jpg" id="r8c14">
-        <img src="imgs/mapGrid/row8/r8c15.jpg" id="r8c15">
-        <img src="imgs/mapGrid/row8/r8c16.jpg" id="r8c16">
-        <img src="imgs/mapGrid/row8/r8c17.jpg" id="r8c17">
-        <img src="imgs/mapGrid/row8/r8c18.jpg" id="r8c18">
-        <img src="imgs/mapGrid/row8/r8c19.jpg" id="r8c19">
-        <img src="imgs/mapGrid/row8/r8c20.jpg" id="r8c20">
-        <img src="imgs/mapGrid/row8/r8c21.jpg" id="r8c21">
-        <img src="imgs/mapGrid/row8/r8c22.jpg" id="r8c22">
-        <img src="imgs/mapGrid/row8/r8c23.jpg" id="r8c23">
-        <img src="imgs/mapGrid/row8/r8c24.jpg" id="r8c24">
-        <img src="imgs/mapGrid/row8/r8c25.jpg" id="r8c25">
-        <img src="imgs/mapGrid/row8/r8c26.jpg" id="r8c26">
-
-        <!-- Row 9 -->
-        <img src="imgs/mapGrid/row9/r9c1.jpg" id="r9c1">
-        <img src="imgs/mapGrid/row9/r9c2.jpg" id="r9c2">
-        <img src="imgs/mapGrid/row9/r9c3.jpg" id="r9c3">
-        <img src="imgs/mapGrid/row9/r9c4.jpg" id="r9c4">
-        <img src="imgs/mapGrid/row9/r9c5.jpg" id="r9c5">
-        <img src="imgs/mapGrid/row9/r9c6.jpg" id="r9c6">
-        <img src="imgs/mapGrid/row9/r9c7.jpg" id="r9c7">
-        <img src="imgs/mapGrid/row9/r9c8.jpg" id="r9c8">
-        <img src="imgs/mapGrid/row9/r9c9.jpg" id="r9c9">
-        <img src="imgs/mapGrid/row9/r9c10.jpg" id="r9c10">
-        <img src="imgs/mapGrid/row9/r9c11.jpg" id="r9c11">
-        <img src="imgs/mapGrid/row9/r9c12.jpg" id="r9c12">
-        <img src="imgs/mapGrid/row9/r9c13.jpg" id="r9c13">
-        <img src="imgs/mapGrid/row9/r9c14.jpg" id="r9c14">
-        <img src="imgs/mapGrid/row9/r9c15.jpg" id="r9c15">
-        <img src="imgs/mapGrid/row9/r9c16.jpg" id="r9c16">
-        <img src="imgs/mapGrid/row9/r9c17.jpg" id="r9c17">
-        <img src="imgs/mapGrid/row9/r9c18.jpg" id="r9c18">
-        <img src="imgs/mapGrid/row9/r9c19.jpg" id="r9c19">
-        <img src="imgs/mapGrid/row9/r9c20.jpg" id="r9c20">
-        <img src="imgs/mapGrid/row9/r9c21.jpg" id="r9c21">
-        <img src="imgs/mapGrid/row9/r9c22.jpg" id="r9c22">
-        <img src="imgs/mapGrid/row9/r9c23.jpg" id="r9c23">
-        <img src="imgs/mapGrid/row9/r9c24.jpg" id="r9c24">
-        <img src="imgs/mapGrid/row9/r9c25.jpg" id="r9c25">
-        <img src="imgs/mapGrid/row9/r9c26.jpg" id="r9c26">
-
-        <!-- Row 10 -->
-        <img src="imgs/mapGrid/row10/r10c1.jpg" id="r10c1">
-        <img src="imgs/mapGrid/row10/r10c2.jpg" id="r10c2">
-        <img src="imgs/mapGrid/row10/r10c3.jpg" id="r10c3">
-        <img src="imgs/mapGrid/row10/r10c4.jpg" id="r10c4">
-        <img src="imgs/mapGrid/row10/r10c5.jpg" id="r10c5">
-        <img src="imgs/mapGrid/row10/r10c6.jpg" id="r10c6">
-        <img src="imgs/mapGrid/row10/r10c7.jpg" id="r10c7">
-        <img src="imgs/mapGrid/row10/r10c8.jpg" id="r10c8">
-        <img src="imgs/mapGrid/row10/r10c9.jpg" id="r10c9">
-        <img src="imgs/mapGrid/row10/r10c10.jpg" id="r10c10">
-        <img src="imgs/mapGrid/row10/r10c11.jpg" id="r10c11">
-        <img src="imgs/mapGrid/row10/r10c12.jpg" id="r10c12">
-        <img src="imgs/mapGrid/row10/r10c13.jpg" id="r10c13">
-        <img src="imgs/mapGrid/row10/r10c14.jpg" id="r10c14">
-        <img src="imgs/mapGrid/row10/r10c15.jpg" id="r10c15">
-        <img src="imgs/mapGrid/row10/r10c16.jpg" id="r10c16">
-        <img src="imgs/mapGrid/row10/r10c17.jpg" id="r10c17">
-        <img src="imgs/mapGrid/row10/r10c18.jpg" id="r10c18">
-        <img src="imgs/mapGrid/row10/r10c19.jpg" id="r10c19">
-        <img src="imgs/mapGrid/row10/r10c20.jpg" id="r10c20">
-        <img src="imgs/mapGrid/row10/r10c21.jpg" id="r10c21">
-        <img src="imgs/mapGrid/row10/r10c22.jpg" id="r10c22">
-        <img src="imgs/mapGrid/row10/r10c23.jpg" id="r10c23">
-        <img src="imgs/mapGrid/row10/r10c24.jpg" id="r10c24">
-        <img src="imgs/mapGrid/row10/r10c25.jpg" id="r10c25">
-        <img src="imgs/mapGrid/row10/r10c26.jpg" id="r10c26">
-
-        <!-- Row 11 -->
-        <img src="imgs/mapGrid/row11/r11c1.jpg" id="r11c1">
-        <img src="imgs/mapGrid/row11/r11c2.jpg" id="r11c2">
-        <img src="imgs/mapGrid/row11/r11c3.jpg" id="r11c3">
-        <img src="imgs/mapGrid/row11/r11c4.jpg" id="r11c4">
-        <img src="imgs/mapGrid/row11/r11c5.jpg" id="r11c5">
-        <img src="imgs/mapGrid/row11/r11c6.jpg" id="r11c6">
-        <img src="imgs/mapGrid/row11/r11c7.jpg" id="r11c7">
-        <img src="imgs/mapGrid/row11/r11c8.jpg" id="r11c8">
-        <img src="imgs/mapGrid/row11/r11c9.jpg" id="r11c9">
-        <img src="imgs/mapGrid/row11/r11c10.jpg" id="r11c10">
-        <img src="imgs/mapGrid/row11/r11c11.jpg" id="r11c11">
-        <img src="imgs/mapGrid/row11/r11c12.jpg" id="r11c12">
-        <img src="imgs/mapGrid/row11/r11c13.jpg" id="r11c13">
-        <img src="imgs/mapGrid/row11/r11c14.jpg" id="r11c14">
-        <img src="imgs/mapGrid/row11/r11c15.jpg" id="r11c15">
-        <img src="imgs/mapGrid/row11/r11c16.jpg" id="r11c16">
-        <img src="imgs/mapGrid/row11/r11c17.jpg" id="r11c17">
-        <img src="imgs/mapGrid/row11/r11c18.jpg" id="r11c18">
-        <img src="imgs/mapGrid/row11/r11c19.jpg" id="r11c19">
-        <img src="imgs/mapGrid/row11/r11c20.jpg" id="r11c20">
-        <img src="imgs/mapGrid/row11/r11c21.jpg" id="r11c21">
-        <img src="imgs/mapGrid/row11/r11c22.jpg" id="r11c22">
-        <img src="imgs/mapGrid/row11/r11c23.jpg" id="r11c23">
-        <img src="imgs/mapGrid/row11/r11c24.jpg" id="r11c24">
-        <img src="imgs/mapGrid/row11/r11c25.jpg" id="r11c25">
-        <img src="imgs/mapGrid/row11/r11c26.jpg" id="r11c26">
-
-        <!-- Row 12 -->
-        <img src="imgs/mapGrid/row12/r12c1.jpg" id="r12c1">
-        <img src="imgs/mapGrid/row12/r12c2.jpg" id="r12c2">
-        <img src="imgs/mapGrid/row12/r12c3.jpg" id="r12c3">
-        <img src="imgs/mapGrid/row12/r12c4.jpg" id="r12c4">
-        <img src="imgs/mapGrid/row12/r12c5.jpg" id="r12c5">
-        <img src="imgs/mapGrid/row12/r12c6.jpg" id="r12c6">
-        <img src="imgs/mapGrid/row12/r12c7.jpg" id="r12c7">
-        <img src="imgs/mapGrid/row12/r12c8.jpg" id="r12c8">
-        <img src="imgs/mapGrid/row12/r12c9.jpg" id="r12c9">
-        <img src="imgs/mapGrid/row12/r12c10.jpg" id="r12c10">
-        <img src="imgs/mapGrid/row12/r12c11.jpg" id="r12c11">
-        <img src="imgs/mapGrid/row12/r12c12.jpg" id="r12c12">
-        <img src="imgs/mapGrid/row12/r12c13.jpg" id="r12c13">
-        <img src="imgs/mapGrid/row12/r12c14.jpg" id="r12c14">
-        <img src="imgs/mapGrid/row12/r12c15.jpg" id="r12c15">
-        <img src="imgs/mapGrid/row12/r12c16.jpg" id="r12c16">
-        <img src="imgs/mapGrid/row12/r12c17.jpg" id="r12c17">
-        <img src="imgs/mapGrid/row12/r12c18.jpg" id="r12c18">
-        <img src="imgs/mapGrid/row12/r12c19.jpg" id="r12c19">
-        <img src="imgs/mapGrid/row12/r12c20.jpg" id="r12c20">
-        <img src="imgs/mapGrid/row12/r12c21.jpg" id="r12c21">
-        <img src="imgs/mapGrid/row12/r12c22.jpg" id="r12c22">
-        <img src="imgs/mapGrid/row12/r12c23.jpg" id="r12c23">
-        <img src="imgs/mapGrid/row12/r12c24.jpg" id="r12c24">
-        <img src="imgs/mapGrid/row12/r12c25.jpg" id="r12c25">
-        <img src="imgs/mapGrid/row12/r12c26.jpg" id="r12c26">
-
-        <!-- Row 13 -->
-        <img src="imgs/mapGrid/row13/r13c1.jpg" id="r13c1">
-        <img src="imgs/mapGrid/row13/r13c2.jpg" id="r13c2">
-        <img src="imgs/mapGrid/row13/r13c3.jpg" id="r13c3">
-        <img src="imgs/mapGrid/row13/r13c4.jpg" id="r13c4">
-        <img src="imgs/mapGrid/row13/r13c5.jpg" id="r13c5">
-        <img src="imgs/mapGrid/row13/r13c6.jpg" id="r13c6">
-        <img src="imgs/mapGrid/row13/r13c7.jpg" id="r13c7">
-        <img src="imgs/mapGrid/row13/r13c8.jpg" id="r13c8">
-        <img src="imgs/mapGrid/row13/r13c9.jpg" id="r13c9">
-        <img src="imgs/mapGrid/row13/r13c10.jpg" id="r13c10">
-        <img src="imgs/mapGrid/row13/r13c11.jpg" id="r13c11">
-        <img src="imgs/mapGrid/row13/r13c12.jpg" id="r13c12">
-        <img src="imgs/mapGrid/row13/r13c13.jpg" id="r13c13">
-        <img src="imgs/mapGrid/row13/r13c14.jpg" id="r13c14">
-        <img src="imgs/mapGrid/row13/r13c15.jpg" id="r13c15">
-        <img src="imgs/mapGrid/row13/r13c16.jpg" id="r13c16">
-        <img src="imgs/mapGrid/row13/r13c17.jpg" id="r13c17">
-        <img src="imgs/mapGrid/row13/r13c18.jpg" id="r13c18">
-        <img src="imgs/mapGrid/row13/r13c19.jpg" id="r13c19">
-        <img src="imgs/mapGrid/row13/r13c20.jpg" id="r13c20">
-        <img src="imgs/mapGrid/row13/r13c21.jpg" id="r13c21">
-        <img src="imgs/mapGrid/row13/r13c22.jpg" id="r13c22">
-        <img src="imgs/mapGrid/row13/r13c23.jpg" id="r13c23">
-        <img src="imgs/mapGrid/row13/r13c24.jpg" id="r13c24">
-        <img src="imgs/mapGrid/row13/r13c25.jpg" id="r13c25">
-        <img src="imgs/mapGrid/row13/r13c26.jpg" id="r13c26">
-
-        <!-- Row 14 -->
-        <img src="imgs/mapGrid/row14/r14c1.jpg" id="r14c1">
-        <img src="imgs/mapGrid/row14/r14c2.jpg" id="r14c2">
-        <img src="imgs/mapGrid/row14/r14c3.jpg" id="r14c3">
-        <img src="imgs/mapGrid/row14/r14c4.jpg" id="r14c4">
-        <img src="imgs/mapGrid/row14/r14c5.jpg" id="r14c5">
-        <img src="imgs/mapGrid/row14/r14c6.jpg" id="r14c6">
-        <img src="imgs/mapGrid/row14/r14c7.jpg" id="r14c7">
-        <img src="imgs/mapGrid/row14/r14c8.jpg" id="r14c8">
-        <img src="imgs/mapGrid/row14/r14c9.jpg" id="r14c9">
-        <img src="imgs/mapGrid/row14/r14c10.jpg" id="r14c10">
-        <img src="imgs/mapGrid/row14/r14c11.jpg" id="r14c11">
-        <img src="imgs/mapGrid/row14/r14c12.jpg" id="r14c12">
-        <img src="imgs/mapGrid/row14/r14c13.jpg" id="r14c13">
-        <img src="imgs/mapGrid/row14/r14c14.jpg" id="r14c14">
-        <img src="imgs/mapGrid/row14/r14c15.jpg" id="r14c15">
-        <img src="imgs/mapGrid/row14/r14c16.jpg" id="r14c16">
-        <img src="imgs/mapGrid/row14/r14c17.jpg" id="r14c17">
-        <img src="imgs/mapGrid/row14/r14c18.jpg" id="r14c18">
-        <img src="imgs/mapGrid/row14/r14c19.jpg" id="r14c19">
-        <img src="imgs/mapGrid/row14/r14c20.jpg" id="r14c20">
-        <img src="imgs/mapGrid/row14/r14c21.jpg" id="r14c21">
-        <img src="imgs/mapGrid/row14/r14c22.jpg" id="r14c22">
-        <img src="imgs/mapGrid/row14/r14c23.jpg" id="r14c23">
-        <img src="imgs/mapGrid/row14/r14c24.jpg" id="r14c24">
-        <img src="imgs/mapGrid/row14/r14c25.jpg" id="r14c25">
-        <img src="imgs/mapGrid/row14/r14c26.jpg" id="r14c26">
-
-        <!-- Treats and Merch -->
-        <img src="imgs/doleWhip.PNG" id="doleWhip">
-        <img src="imgs/mickeyEars.PNG" id="mickeyEars">
-        <img src="imgs/mickeyIceCream.PNG" id="mickeyIceCream">
-        <img src="imgs/orangeBird.PNG" id="orangeBird">
+        <div class="jumbotron">
+            <h1 class="display-4"><span><img src="imgs/disneyLogo.png" width="100" height="100"></span>ISNEY Platformer</h1>
+            <hr class="my-4">
+            <p id="gameInfo">Mickey Mouse is throwing a party! He needs to visit 8 locations throughout Magic Kingdom to pick up treats and products for his guests. Mickey's shopping list is displayed below; he needs two of each item. Help Mickey collect everything he needs for his party!</p>
+            <div class="treatsCards">
+                <div class="row">
+                    <div class="col-sm-3">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Dole Whip</h5>
+                          <img src="imgs/doleWhip.PNG" class="treatsImg" alt="Mickey Ice Cream" width="100" height="100">
+                          <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="bottom" title="Locations" data-content="1. Sleepy Hollow<br />2. Dumbo The Flying Elephant" data-html="true">Locations</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Mickey Ears</h5>
+                          <img src="imgs/mickeyEars.PNG" class="treatsImg" alt="Mickey Ice Cream" width="100" height="100">
+                          <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="bottom" title="Locations" data-content="1. WDW Railroad<br />2. Tomorrowland Speedway" data-html="true">Locations</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Orange Bird Sipper</h5>
+                            <img src="imgs/orangeBird.PNG" class="treatsImg" alt="Mickey Ice Cream" width="100" height="100">
+                            <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="bottom" title="Locations" data-content="1. The Barnstormer<br />2. It's a Small World" data-html="true">Locations</button>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card">
+                          <div class="card-body">
+                            <h5 class="card-title">Mickey Ice Cream Bar</h5>
+                            <img src="imgs/mickeyIceCream.PNG" class="treatsImg" alt="Mickey Ice Cream" width="100" height="100">
+                            <button type="button" class="btn btn-primary" data-toggle="popover" data-placement="bottom" title="Locations" data-content="1. Cinderella's Castle<br />2. Gaston's Tavern" data-html="true">Locations</button>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div id="startBtn">
+                <a class="btn btn-success btn-lg" href="game.html" role="button">Start Game</a>
+            </div>
+        </div>
 
     </div>
+    
 
-
-    <script src="js/script.js"></script>
-    <script src="js/player.js"></script>
-    <script src="js/map.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        });
+    </script>
 </body>
 </html>
