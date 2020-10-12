@@ -28,21 +28,24 @@ function Player(x, y) {
                 this.xspeed-=3;
             }
 
-            //vertical movement with gravity
-            // if (upKey) {
-            //     this.yspeed -= 10;
-            // }
+            //determines whether gravity is on or off depending on user specifications
+            if(document.getElementById('noGravity').checked) {
+                //vartical movement without gravity
+                if (!upKey && !downKey || upKey && downKey) {
+                    this.yspeed *= this.friction
+                } else if (upKey) {
+                    this.yspeed-=3;
+                } else if (downKey) {
+                    this.yspeed+=3;
+                }
+            } else if (document.getElementById('gravity').checked) {
+                //vertical movement with gravity
+                if (upKey) {
+                    this.yspeed -= 10;
+                }
 
-            // gravity
-            // this.yspeed += 5;
-
-            //vartical movement without gravity
-            if (!upKey && !downKey || upKey && downKey) {
-                this.yspeed *= this.friction
-            } else if (upKey) {
-                this.yspeed-=3;
-            } else if (downKey) {
-                this.yspeed+=3;
+                // gravity
+                this.yspeed += 5;
             }
 
 
@@ -76,7 +79,7 @@ function Player(x, y) {
             this.xspeed = parseInt(this.xspeed);
             this.yspeed = parseInt(this.yspeed);
 
-            //horizontal collision detection
+            //used for horizontal collision detection
             var horizontalRect = {
                 x: this.x + this.xspeed,
                 y: this.y,
@@ -84,7 +87,7 @@ function Player(x, y) {
                 height: this.height
             }
 
-            //vertical collision detection
+            //used for vertical collision detection
             var verticalRect = {
                 x: this.x,
                 y: this.y + this.yspeed,

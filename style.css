@@ -24,3 +24,9 @@ canvas {
     font-size: 40px;
     font-weight: bold;
 }
+
+.gravityBtn{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
